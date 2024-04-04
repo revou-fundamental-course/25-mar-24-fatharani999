@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/logo.png">
+  <title>Kalkulator BMI</title>
+</head>
+
+<body>
+  <header style="margin-top: 50px;">
+    <h1>Kalkulator BMI</h1>
+    <br>
+    <p class="description">🌟 Selamat datang di Kalkulator Indeks Massa Tubuh (IMT)! 🌟 <br>
+
+      🔍 Gunakan kalkulator ini untuk mengecek Indeks Massa Tubuh (IMT) Anda dan lihat apakah berat badan Anda berada dalam kisaran ideal atau tidak. Kalkulator ini akan memberi Anda gambaran tentang perbandingan berat badan dengan tinggi badan Anda.
+      
+      🚀 Yuk, hitung sekarang dan temukan hasilnya!
+      
+      Klik di sini untuk mulai menggunakan kalkulator BMI! 📏💪</p>
+    <img src="./assets/bmi.png" style="margin-bottom: 140px;" class="icon">
+  </header>
+
+  <!-- Container for calculator BMI -->
+  <div class="container">
+    <!-- Container for BMI form -->
+    <form action="index.html#result" class="question" onsubmit="submitForm(event)">
+      <div class="gender">
+        <p>Pilih Jenis Kelamin :</p>
+        <div class="gender-option">
+          <input type="radio" id="laki-laki" name="gender" value="Laki-laki" style="background-color: #99BC85;" checked>
+          <label class="label" for="laki-laki">Laki - laki</label>
+
+          <input type="radio" id="perempuan" name="gender" value="Perempuan">
+          <label class="label" for="perempuan">Perempuan</label>
+        </div>
+      </div>
+      <div class="usia">
+        <p>Usia :</p>
+        <div class="input-number">
+          <input type="number"
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+            id="usia" name="usia" placeholder="0" min="0">
+          <div class="error">
+            <p id="usiaNull" class="">Usia harus diisi</p>
+            <p id="usiaRange">Usia harus diantara 2 dan 120</p>
+          </div>
+        </div>
+      </div>
+      <div class="berat">
+        <p>Berat(kg) :</p>
+        <div class="input-number">
+          <input type="number"
+            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+            id="berat" name="berat" placeholder="0" >
+          <div class="error">
+            <p id="beratNull">Berat badan harus diisi</p>
+            <p id="beratRange">Berat badan harus diantara 3 dan 600</p>
+          </div>
+        </div>
+      </div>
+      <div class="tinggi">
+        <p>Tinggi(cm) :</p>
+        <div class="input-number">
+          <input type="number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 &&
+        event.charCode <= 57))" id="tinggi" name="tinggi" placeholder="0">
+          <div class="error">
+            <p id="tinggiNull">Tinggi badan harus diisi</p>
+            <p id="tinggiRange">Tinggi badan harus diantara 40 dan 300</p>
+          </div>
+        </div>
+      </div>
+
+      <input type="submit" class="submit" value="Hitung BMI">
+      <input type="reset" class="reset" value="Reset">
+    </form>
+
+    <!-- Container for result -->
+    <div id="result" class="result">
+      <h2>Hasil Perhitungan BMI</h2>
+      <p><span name="answer">Laki - laki</span> usia <span name="answer">0</span> tahun</p>
+      <p>berat <span name="answer">0</span> kg dan tinggi <span name="answer">0</span> cm</p>
+      <p>BMI kamu :</p>
+      <p id="bmi-result">0</p>
+      <h3 id="kategori-bmi">Berat ideal</h3>
+      <p id="deskripsi-bmi">Pertahankan pola makan saat ini dan akukan aktivitas fisik 3 kali dalam seminggu agar tubuh
+        tetap dalam kondisi optimal</p>
+      <br>
+      <a class="konsultasi"
+        href="https://www.halodoc.com/tanya-dokter/cari?source=com.halodoc.bmicalculator&category_id=426fb851-f268-4332-8aa3-52c0ff78c27f&category_name=Ahli%20Gizi"
+        target="_blank">Konsultasi
+        Ahli Gizi</a>
+    </div>
+  </div>
+
+ 
+    
+      <center>
+      <p style=" background-color: #D2E3C8;">
+        2024 Fatharani Sativa Dewi
+      </p>
+    </center>
+    
+  </footer>
+</body>
+
+<script src="./js/script.js"></script>
+
+</html>
